@@ -1,24 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
+import { 
+  StyleSheet, Text, View,
+  SafeAreaView, Image,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableNativeFeedback
+} from 'react-native';
 
 export default function App() {
-// bout to render an image
-
-// console.log(require('./assets/icon.png')) // returns a number that is a reference to that image
+// TOUCHABLES; look at different imports
 
   return (
     <SafeAreaView style={styles.container}>
       <Text> Beyond Burger </Text>
-      {/* need to use require('path') the image for local image; 
-          for net images you need to pass an obj in with key: uri, width, height
-          there are blurRadius prop... LOOK AT DOCS FOR IMAGES */}
-      <Image
-        source={{
-          uri: 'https://picsum.photos/200/300',
-          width: 200,
-          height: 300,
-        }} />
+      {/* image must be inside TouchableWithoutFeedback in order to use on(long)Press(in/out)
+            TouchableWithoutFeedback: shows up on terminal but doesnt give feedback on app
+            TouchableOpacity: for a fraction of a second, image fades off when touched
+            TouchableHighlight: image gets highlighted when clicked
+            TouchableNativeFeedback: doesnt do much when its wrapped in an image; must be wrapped in a view component;
+              for iphone it seems to not do anything though
+      */}
+      <TouchableNativeFeedback onPress={() => console.log('image pressed')} > 
+        <Image
+          source={{
+            uri: 'https://picsum.photos/200/300',
+            width: 200,
+            height: 300,
+          }} 
+        />
+      </TouchableNativeFeedback>
+
+      {/* only for TouchableNativeFeedback
+      <TouchableNativeFeedback onPress={() => console.log('image pressed')} > 
+        <View style={{
+            backgroundColor: 'dodgerblue',
+            width: 200,
+            height: 300,
+          }} 
+        >
+        </View>
+      </TouchableNativeFeedback>    */}
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
