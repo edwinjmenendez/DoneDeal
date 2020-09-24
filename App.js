@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  let x = 1;
   // console.log('App Excecuted') shows up in terminal
   return (
     // view is like a div and any test must be rendered by a text component
