@@ -6,25 +6,29 @@ export default function App() {
     <View 
       style={{
         backgroundColor: 'dodgerblue',
-        flex: 1 // doesnt even show up!! btw this is the parent 
+        flex: 1, // doesnt even show up!! btw this is the parent
+        flexDirection: 'row', // by defeault, the direction (without this) ios vertical not horizontal
       }}
     >
       <View 
         style={{
           backgroundColor: 'red',
-          flex: 1 // same size as gold
+          width: 100,
+          height: 200
         }}
       ></View>
       <View 
         style={{
           backgroundColor: 'black',
-          flex: 2 // double the size of the others
+          width: 100,
+          height: 200
         }}
       ></View>
       <View 
         style={{
           backgroundColor: 'gold',
-          flex: 1 // same size as red
+          width: 100,
+          height: 200
         }}
       ></View>
     </View>
