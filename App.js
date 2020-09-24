@@ -27,8 +27,13 @@ export default function App() {
           backgroundColor: 'black',
           width: 100,
           height: 200,
-          // BY DEFAULT THE POSITION IS SET TO RELATIVE FOR REACT NATIVE
-          // IF YOU CHANGE TO Absolute you can move the component relative to the parent component
+          // BY DEFAULT THE POSITION IS SET TO RELATIVE FOR REACT NATIVE COMPONENTS
+            // so if i add padding to any of these components left, right, it'll just over/underlap the next color
+          // IF YOU CHANGE a cxomponeent to ABSOLUTE,it moves relative to the parent component
+            // i.e. this black color would be in the upper left corner while the other two comp remain in the center
+          top: 20,
+          left: 20,
+          position: 'absolute'
         }}
       ></View>
       <View 
@@ -51,3 +56,5 @@ export default function App() {
 //     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
 //   },
 // });
+
+// https://expo.io/@ejmenendez/DoneWithItPart2
