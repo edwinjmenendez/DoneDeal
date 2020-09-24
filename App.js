@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Button, Alert } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Button, Platform } from 'react-native';
 
 export default function App() {
-  // 
+  // Platform imports is for OS options; StatusBar sets thje current height of header of device
+  // used since SafeAreaView is only for IOS
+
   return (
-    // the left element gets overwritten by the custom one on the write
-    // i guess you can have more than 2 elements...DOCS
-    <SafeAreaView style={[styles.container, containerStyle]}>
+    <SafeAreaView style={styles.container}>
       <Button 
         title='Click Me'
         onPress={() => console.log('text')}
@@ -16,16 +16,12 @@ export default function App() {
   );
 }
 
-const containerStyle = { backgroundColor: 'orange' }
-
-// we use stylesheet because it throws errors if we misspell something,
-// and i guess its for optimization i guess sop its recommended
-// very conventional to have styles in the same file, but can separate styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center', 
-    justifyContent: 'center',
+    // alignItems: 'center', 
+    // justifyContent: 'center',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
