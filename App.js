@@ -1,21 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
 
 export default function App() {
+// bout to render an image
 
-  // console.log('App Excecuted') shows up in terminal
-  // handlePress will be on the actual text
-  const handlePress = () => console.log('same as onCLick i think')
+// console.log(require('./assets/icon.png')) // returns a number that is a reference to that image
 
   return (
-    // with SafeAreaView now <text> is no longer behind ipone notch, adding some padding 
-    
-    // Initially what happens when you add a bunch of text is text 
-    // will go edge to edge and move onto next line
-    // but if you set a nuberOfLines prop it'll be ion one full line with ...
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}> Beyond Burger </Text>
+      <Text> Beyond Burger </Text>
+      {/* need to use require('path') the image for local image; 
+          for net images you need to pass an obj in with key: uri, width, height
+          there are blurRadius prop... LOOK AT DOCS FOR IMAGES */}
+      <Image
+        source={{
+          uri: 'https://picsum.photos/200/300',
+          width: 200,
+          height: 300,
+        }} />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -24,9 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
-    // if these two are removed text is at the very top of iphone xr screen (bad)
-    // fixed by adding the SafeAreaView component
+    backgroundColor: '#fff',
     alignItems: 'center', 
     justifyContent: 'center',
   },
