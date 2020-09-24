@@ -3,31 +3,24 @@ import React from 'react';
 import { StyleSheet, Text, SafeAreaView, Button, Alert } from 'react-native';
 
 export default function App() {
-// alerts
-
+  // 
   return (
-    <SafeAreaView style={styles.container}>
-      {/* alert('text') works the same way as browser aler but natively
-          but to customize alert, import Alert as seen below
-          can also add functionality to alert buttons of alerts
-          alert prompt takes title, message callback
-          ** NOTE: ALERTS ONLY WORK ON IOS as far as i know 
-      */}
+    // the left element gets overwritten by the custom one on the write
+    // i guess you can have more than 2 elements...DOCS
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Button 
         title='Click Me'
-        onPress={() => Alert.alert('My title', 'my message', [
-          { text: 'Yes', onPress: () => console.log('yee')},
-          { text: 'Yes', onPress: () => console.log('yup') },
-        ])}
-      />
-      <Button 
-        title='Click Me'
-        onPress={() => Alert.prompt('My title', 'my message', text => console.log(text))}
+        onPress={() => console.log('text')}
       />
     </SafeAreaView>
   );
 }
 
+const containerStyle = { backgroundColor: 'orange' }
+
+// we use stylesheet because it throws errors if we misspell something,
+// and i guess its for optimization i guess sop its recommended
+// very conventional to have styles in the same file, but can separate styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
