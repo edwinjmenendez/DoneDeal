@@ -1,17 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Button } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Button, Alert } from 'react-native';
 
 export default function App() {
-// TOUCHABLES; look at different imports
+// alerts
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* look at button attributes for further info */}
+      {/* alert('text') works the same way as browser aler but natively
+          but to customize alert, import Alert as seen below
+          can also add functionality to alert buttons of alerts
+          alert prompt takes title, message callback
+          ** NOTE: ALERTS ONLY WORK ON IOS as far as i know 
+      */}
       <Button 
         title='Click Me'
-        onPress={() => console.log('pressed')}
-        color='black'  
+        onPress={() => Alert.alert('My title', 'my message', [
+          { text: 'Yes', onPress: () => console.log('yee')},
+          { text: 'Yes', onPress: () => console.log('yup') },
+        ])}
+      />
+      <Button 
+        title='Click Me'
+        onPress={() => Alert.prompt('My title', 'my message', text => console.log(text))}
       />
     </SafeAreaView>
   );
