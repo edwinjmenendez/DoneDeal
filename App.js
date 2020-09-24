@@ -26,26 +26,14 @@ export default function App() {
         style={{
           backgroundColor: 'black',
           width: 100,
-          height: 200
+          height: 200,
+          // BY DEFAULT THE POSITION IS SET TO RELATIVE FOR REACT NATIVE
+          // IF YOU CHANGE TO Absolute you can move the component relative to the parent component
         }}
       ></View>
       <View 
         style={{
           backgroundColor: 'pink',
-          width: 100,
-          height: 200
-        }}
-      ></View>
-      <View 
-        style={{
-          backgroundColor: 'orange',
-          width: 100,
-          height: 200
-        }}
-      ></View>
-      <View 
-        style={{
-          backgroundColor: 'gold',
           width: 100,
           height: 200
         }}
