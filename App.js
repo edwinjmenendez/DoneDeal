@@ -1,5 +1,6 @@
 import React from 'react';
 import { 
+  Dimensions,
   StyleSheet, 
   Text, 
   SafeAreaView, View,
@@ -9,13 +10,16 @@ import {
 } from 'react-native';
 
 export default function App() {
-
+  console.log(Dimensions.get('screen')) // checks the dimensions of screen
   return (
     <SafeAreaView style={styles.container}>
-      <Button 
-        title='Click Me'
-        onPress={() => console.log('text')}
-      />
+      <View style={{
+        width: '50%',
+        height: 70,
+        backgroundColor: 'dodgerblue'
+      }} >
+
+      </View>
     </SafeAreaView>
   );
 }
@@ -24,7 +28,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // this was removed because if padding line wasnt added the click me button would interfere with header of non iphones
     // alignItems: 'center', 
     // justifyContent: 'center',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
