@@ -3,9 +3,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  // console.log('App Excecuted') shows up in terminal
   return (
+    // view is like a div and any test must be rendered by a text component
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hello World</Text>
       <StatusBar style="auto" />
     </View>
   );
