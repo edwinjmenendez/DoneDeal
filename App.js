@@ -10,6 +10,8 @@ export default function App() {
         flexDirection: 'row', // by defeault, the direction (without this) ios vertical not horizontal
         justifyContent: 'center', // align item along the main axis; dependent on flexDir; space around/between etc // aligns main axis (in this case horizontally)
         alignItems: 'center', // align item along the main axis; dependent on flexDir; space around/between etc // aligns secondary axis (in this case vertically)
+        alignContent: 'center', // needed with flex wrap to not fuck up display... in case too many boxes are in one line..(redo)
+        flexWrap: 'wrap'
       }}
     >
       <View 
@@ -17,12 +19,26 @@ export default function App() {
           backgroundColor: 'red',
           width: 100,
           height: 200,
-          alignSelf: 'flex-start', // aligns chosen element on 2ndary axis (i think) 
+          // alignSelf: 'flex-start', // aligns chosen element on 2ndary axis (i think) 
         }}
       ></View>
       <View 
         style={{
           backgroundColor: 'black',
+          width: 100,
+          height: 200
+        }}
+      ></View>
+      <View 
+        style={{
+          backgroundColor: 'pink',
+          width: 100,
+          height: 200
+        }}
+      ></View>
+      <View 
+        style={{
+          backgroundColor: 'orange',
           width: 100,
           height: 200
         }}
