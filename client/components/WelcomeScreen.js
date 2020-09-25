@@ -15,10 +15,9 @@ const WelcomeScreen = () => {
         />
         <Text>Sell What You Dont Need</Text>
       </SafeAreaView>
-      {/* <View> */}
-        <View style={styles.login} />
-        <View style={styles.signup} />
-      {/* </View> */}
+      {/* tried putting a container around it but it didnt work for some reason, fix later */}
+      <View style={styles.login} />
+      <View style={styles.signup} />
     </ImageBackground>
   )
 }
@@ -31,6 +30,11 @@ const styles = StyleSheet.create({
     // width: '100%', dont need these i guess 
     // height: '100%',
   },
+  login: {
+    backgroundColor: '#fc5c65',
+    height: 70,
+    width: '100%',
+  },
   logoContainer: {
     position: 'absolute',
     top: Platform.OS === 'android' ? StatusBar.currentHeight + 70 : 70,
@@ -39,11 +43,6 @@ const styles = StyleSheet.create({
   logo: {
     width: 100, 
     height: 100,
-  },
-  login: {
-    backgroundColor: '#fc5c65',
-    height: 70,
-    width: '100%',
   },
   signup: {
     backgroundColor: '#4ECDC4',
