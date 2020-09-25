@@ -1,12 +1,13 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-import WelcomeScreen from './client/components/WelcomeScreen.js'
+import WelcomeScreen from './client/components/WelcomeScreen.js';
+import ViewImageScreen from './client/components/ViewImageScreen.js';
 
 export default function App() {
   return (
     // no view component needed to return this
-    <WelcomeScreen />
+    <ViewImageScreen />
   );
 }
 
