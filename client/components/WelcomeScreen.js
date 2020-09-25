@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Image, ImageBackground, Text, SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
 
+import colors from './config/colors.js'
+
 const WelcomeScreen = () => {
   return (
     // i guess style is needed for the imageBackground or it wont work
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     // height: '100%',
   },
   login: {
-    backgroundColor: '#fc5c65',
+    backgroundColor: colors.primary,
     height: 70,
     width: '100%',
   },
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   signup: {
-    backgroundColor: '#4ECDC4',
+    backgroundColor: colors.secondary,
     height: 70,
     width: '100%',
   },

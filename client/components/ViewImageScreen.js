@@ -1,6 +1,8 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet, Image, Platform, StatusBar } from 'react-native';
 
+import colors from './config/colors.js'
+
 const ViewImageScreen = () => {
   return (
    <SafeAreaView style={styles.background} >
@@ -17,7 +19,7 @@ const ViewImageScreen = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: colors.black,
   },
   image: {
     width: '100%',
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain', // resizes image to fit on page
   },
   leftBox: {
-    backgroundColor: '#fc5c65',
+    backgroundColor: colors.primary,
     width: 50,
     height: 50,
     position: 'absolute',
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
     left: 30
   },
   rightBox: {
-    backgroundColor: '#4ECDC4',
+    backgroundColor: colors.secondary,
     width: 50,
     height: 50,
     position: 'absolute',
