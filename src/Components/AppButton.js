@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import colors from '../config/colors';
 
-const ButtonComp = ({title, onPress, color='primary'}) => {
+const AppButton = ({title, onPress, color='primary'}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ButtonComp;
+export default AppButton;
