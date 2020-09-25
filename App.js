@@ -5,20 +5,13 @@ import WelcomeScreen from './client/components/WelcomeScreen.js'
 
 export default function App() {
   return (
-    <View style={styles.container} >
+    <View>
       <WelcomeScreen />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'rgb(225,154,1)',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
