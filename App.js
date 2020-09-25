@@ -7,20 +7,8 @@ import ButtonComp from './client/components/ButtonComp.js';
 
 export default function App() {
   return (
-    // no view component needed to return this
-    <ButtonComp />
+    <WelcomeScreen />
   );
 }
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     // alignItems: 'center', 
-//     // justifyContent: 'center',
-//     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-//   },
-// });
 
 // https://expo.io/@ejmenendez/DoneWithItPart2

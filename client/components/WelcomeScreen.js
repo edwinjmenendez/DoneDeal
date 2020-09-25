@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Image, ImageBackground, Text, SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
 
+import ButtonComp from './ButtonComp.js';
 import colors from './config/colors.js'
 
 const WelcomeScreen = () => {
   return (
     // i guess style is needed for the imageBackground or it wont work
     <ImageBackground
+      blurRadius={10}
       source={require('../../assets/background.jpg')}
       style={styles.container}
     >
@@ -15,11 +17,12 @@ const WelcomeScreen = () => {
           source={require('../../assets/logo-red.png')}
           style={styles.logo}
         />
-        <Text>Sell What You Dont Need</Text>
+        <Text style={styles.tagline} >Sell What You Dont Need</Text>
       </SafeAreaView>
-      {/* tried putting a container around it but it didnt work for some reason, fix later */}
-      <View style={styles.login} />
-      <View style={styles.signup} />
+      <View style={styles.buttonContainer}>
+        <ButtonComp title={'login'} onPress={() => console.log('login')} />
+        <ButtonComp title={'signup'} color='secondary' onPress={() => console.log('signup')} />
+      </View>
     </ImageBackground>
   )
 }
@@ -29,13 +32,10 @@ const styles = StyleSheet.create({
     flex: 1, // sets image background all the way i guess
     justifyContent: 'flex-end', // for its children
     alignItems: 'center' // aligning children
-    // width: '100%', dont need these i guess 
-    // height: '100%',
   },
-  login: {
-    backgroundColor: colors.primary,
-    height: 70,
-    width: '100%',
+  buttonContainer: {
+    padding: 20,
+    width: '100%'
   },
   logoContainer: {
     position: 'absolute',
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     width: 100, 
     height: 100,
   },
-  signup: {
-    backgroundColor: colors.secondary,
-    height: 70,
-    width: '100%',
-  },
+  tagline: {
+    fontSize: 25,
+    fontWeight: '600',
+    paddingVertical: 10
+  }
 })
 
 
