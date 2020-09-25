@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, ImageBackground, Text, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Image, ImageBackground, Text, SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
 
 const WelcomeScreen = () => {
   return (
@@ -8,29 +8,47 @@ const WelcomeScreen = () => {
       source={require('../../assets/background.jpg')}
       style={styles.container}
     >
-      <SafeAreaView style={styles.textLogo} >
+      <SafeAreaView style={styles.logoContainer} >
         <Image
           source={require('../../assets/logo-red.png')}
           style={styles.logo}
         />
         <Text>Sell What You Dont Need</Text>
       </SafeAreaView>
+      {/* <View> */}
+        <View style={styles.login} />
+        <View style={styles.signup} />
+      {/* </View> */}
     </ImageBackground>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%', 
-    height: '100%', 
+    flex: 1, // sets image background all the way i guess
+    justifyContent: 'flex-end', // for its children
+    alignItems: 'center' // aligning children
+    // width: '100%', dont need these i guess 
+    // height: '100%',
   },
-  textLogo: {
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+  logoContainer: {
+    position: 'absolute',
+    top: Platform.OS === 'android' ? StatusBar.currentHeight + 70 : 70,
+    alignItems: 'center', // aligning children
   },
   logo: {
-    width: 150, 
-    height: 150,
+    width: 100, 
+    height: 100,
+  },
+  login: {
+    backgroundColor: '#fc5c65',
+    height: 70,
+    width: '100%',
+  },
+  signup: {
+    backgroundColor: '#4ECDC4',
+    height: 70,
+    width: '100%',
   },
 })
 

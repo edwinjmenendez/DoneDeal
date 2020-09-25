@@ -5,9 +5,8 @@ import WelcomeScreen from './client/components/WelcomeScreen.js'
 
 export default function App() {
   return (
-    <View>
-      <WelcomeScreen />
-    </View>
+    // no view component needed to return this
+    <WelcomeScreen />
   );
 }
 
