@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import colors from './config/colors';
+import colors from '../config/colors';
 
 const ButtonComp = ({title, onPress, color='primary'}) => {
   return (

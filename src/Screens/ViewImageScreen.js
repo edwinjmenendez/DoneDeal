@@ -1,7 +1,7 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet, Image, Platform, StatusBar } from 'react-native';
 
-import colors from './config/colors.js'
+import colors from '../config/colors.js'
 
 const ViewImageScreen = () => {
   return (
@@ -9,7 +9,7 @@ const ViewImageScreen = () => {
      <View style={styles.leftBox} />
      <View style={styles.rightBox} />
      <Image
-      source={require('../../assets/chair.jpg')}
+      source={require('../assets/chair.jpg')}
       style={styles.image}
     />
    </SafeAreaView> 
