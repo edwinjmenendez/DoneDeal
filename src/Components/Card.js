@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     margin: 25,
     backgroundColor: colors.white,
     borderRadius: 15,
-    overflow: 'hidden'
+    overflow: 'hidden', // allows for borderRadius to show
   },
   detailsContainer: {
     padding: 20,
