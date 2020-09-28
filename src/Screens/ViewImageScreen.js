@@ -1,12 +1,18 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet, Image, Platform, StatusBar } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import colors from '../config/colors.js'
 
 const ViewImageScreen = () => {
   return (
    <SafeAreaView style={styles.background} >
-     <View style={styles.leftBox} />
+     <View style={styles.leftBox}>
+       <MaterialCommunityIcons name='close' color='white' size={35} />
+     </View>
+     <View style={styles.rightBox}>
+       <MaterialCommunityIcons name='trash-can-outline' color='white' size={35} />
+     </View>
      <View style={styles.rightBox} />
      <Image
       source={require('../assets/chair.jpg')}
@@ -27,17 +33,11 @@ const styles = StyleSheet.create({
     resizeMode: 'contain', // resizes image to fit on page
   },
   leftBox: {
-    backgroundColor: colors.primary,
-    width: 50,
-    height: 50,
     position: 'absolute',
     top: Platform.OS === 'android' ? StatusBar.currentHeight + 40 : 40,
     left: 30
   },
   rightBox: {
-    backgroundColor: colors.secondary,
-    width: 50,
-    height: 50,
     position: 'absolute',
     top: Platform.OS === 'android' ? StatusBar.currentHeight + 40 : 40,
     right: 30
