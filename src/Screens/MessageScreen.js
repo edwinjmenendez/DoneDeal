@@ -46,6 +46,7 @@ const MessageScreen = () => {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => console.log('Message ID: ', item.id, 'selected')}
           />}
         ItemSeparatorComponent={ListItemSeparator}
       />
