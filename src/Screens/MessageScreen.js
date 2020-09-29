@@ -1,15 +1,15 @@
 import React from 'react'
-import { View, Text, FlatList, StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native'
-import Constants from 'expo-constants';
+import { FlatList } from 'react-native'
 
 import ListItem from '../Components/ListItem'
+import Screen from '../Components/Screen';
 
 // dummyData
 
 const messages = [
   {
     id: 1,
-    title: 'Kelly',
+    title: 'Mosh',
     description: 'Fuck Edwin',
     image: require('../assets/mosh.jpg')
   },
@@ -17,14 +17,26 @@ const messages = [
     id: 2,
     title: 'Edwin',
     description: 'I love Kelly',
-    image: require('../assets/mosh.jpg')
+    image: require('../assets/edwin.jpg')
+  },
+  {
+    id: 3,
+    title: 'Kelly',
+    description: 'I love no one',
+    image: require('../assets/kelly.jpg')
+  },
+  {
+    id: 4,
+    title: 'Edwin',
+    description: 'I love Kelly',
+    image: require('../assets/gorgeousHead.jpg')
   },
 ]
 
 const MessageScreen = () => {
   // flatList takes 3 props
   return (
-    <SafeAreaView style={styles.container} >
+    <Screen>
       <FlatList
         data={messages}
         keyExtractor={message => message.id.toString()} // converted to string because we'll get a warning
@@ -35,15 +47,8 @@ const MessageScreen = () => {
             image={item.image}
           />}
       />
-    </SafeAreaView>
+    </Screen>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: Constants.statusBarHeight,
-  }
-
-})
 
 export default MessageScreen;
