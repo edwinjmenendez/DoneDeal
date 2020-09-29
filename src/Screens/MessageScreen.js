@@ -2,6 +2,7 @@ import React from 'react'
 import { FlatList } from 'react-native'
 
 import ListItem from '../Components/ListItem'
+import ListItemSeparator from '../Components/ListItemSeparator';
 import Screen from '../Components/Screen';
 
 // dummyData
@@ -46,6 +47,7 @@ const MessageScreen = () => {
             subTitle={item.description}
             image={item.image}
           />}
+        ItemSeparatorComponent={ListItemSeparator}
       />
     </Screen>
   )
