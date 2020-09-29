@@ -9,14 +9,14 @@ import ListItem from '../Components/ListItem'
 const messages = [
   {
     id: 1,
-    title: 'T1',
-    description: 'HELLO',
+    title: 'Kelly',
+    description: 'Fuck Edwin',
     image: require('../assets/mosh.jpg')
   },
   {
     id: 2,
-    title: 'T2',
-    description: 'WORLD',
+    title: 'Edwin',
+    description: 'I love Kelly',
     image: require('../assets/mosh.jpg')
   },
 ]
