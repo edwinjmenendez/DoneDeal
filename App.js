@@ -12,13 +12,15 @@ import MyAccountScreen from './src/Screens/MyAccountScreen';
 import Screen from './src/Components/Screen';
 import colors from './src/config/colors';
 import Icon from './src/Components/Icon';
+import ListItem from './src/Components/ListItem';
 
 export default function App() {
   return (
       <Screen style={styles.screen} >
-        <Icon 
-        name='email'
-        size={50}    
+        <ListItem 
+        title='My Title'
+        subTitle='My subtitle' 
+        ImageComponent={<Icon name='email' />}
         />
       </Screen>
   );
