@@ -21,7 +21,8 @@ const Card = ({ title, subTitle, image }) => {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 25,
+    marginHorizontal: 20,
+    marginVertical: 10,
     backgroundColor: colors.white,
     borderRadius: 15,
     overflow: 'hidden', // allows for borderRadius to show

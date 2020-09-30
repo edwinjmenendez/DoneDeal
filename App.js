@@ -13,17 +13,18 @@ import Screen from './src/Components/Screen';
 import colors from './src/config/colors';
 import Icon from './src/Components/Icon';
 import ListItem from './src/Components/ListItem';
+import ListingScreen from './src/Screens/ListingScreen';
 
 export default function App() {
   return (
-    <MyAccountScreen />
+    <ListingScreen />
   );
 }
 
-const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: colors.primary
-  }
-})
+// const styles = StyleSheet.create({
+//   screen: {
+//     backgroundColor: colors.primary
+//   }
+// })
 
 // https://expo.io/@ejmenendez/DoneWithItPart2
