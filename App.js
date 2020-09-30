@@ -16,13 +16,7 @@ import ListItem from './src/Components/ListItem';
 
 export default function App() {
   return (
-      <Screen style={styles.screen} >
-        <ListItem 
-        title='My Title'
-        subTitle='My subtitle' 
-        ImageComponent={<Icon name='email' />}
-        />
-      </Screen>
+    <MyAccountScreen />
   );
 }
 
