@@ -52,50 +52,7 @@ const MyAccountScreen = () => {
           IconComponent={
             <Icon  name='logout' backgroundColor='#ff366d'/>} />
       </View>
-      
-      {/* <View style={styles.container} >
-        <ListItem 
-          title='Edwin Menendez'
-          subTitle='edwinsemail@gmail.com'
-          image={require('../assets/edwin.jpg')}
-        />
-      </View> */}
     </Screen>
-    
-    
-    
-    
-    
-    // MY ATTEMPT
-    // name and email info
-    // <View>
-    //   <View style={styles.container}>
-    //     <ListItem
-    //       title={'Edwin Menendez'}
-    //       subTitle={'edwin@test.com'}
-    //       image={require('../assets/edwin.jpg')}
-    //       onPress={() => console.log('hehe')}
-    //       renderRightActions={() => console.log('hoho')} />
-    //   </View>
-    //   <FlatList style={styles.container}>
-    //     <ListItem
-    //       title={'Edwin Menendez'}
-    //       subTitle={'edwin@test.com'}
-    //       image={require('../assets/edwin.jpg')}
-    //       onPress={() => console.log('hehe')}
-    //       renderRightActions={() => console.log('hoho')} />
-    //     <ListItem
-    //       title={'Edwin Menendez'}
-    //       subTitle={'edwin@test.com'}
-    //       image={require('../assets/edwin.jpg')}
-    //       onPress={() => console.log('hehe')}
-    //       renderRightActions={() => console.log('hoho')} />
-    //   </FlatList>
-    // </View>
-    // list
-      // my listings
-      // my messages
-    // log out
   )
 }
 
