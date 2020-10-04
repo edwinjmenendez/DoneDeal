@@ -14,6 +14,7 @@ import colors from './src/config/colors';
 import Icon from './src/Components/Icon';
 import ListItem from './src/Components/ListItem';
 import ListingScreen from './src/Screens/ListingScreen';
+import AppTextInput from './src/Components/AppTextInput';
 
 export default function App() {
 
@@ -21,15 +22,7 @@ export default function App() {
 
   return (
     <Screen>
-      <TextInput
-
-        onChangeText={text => setFirstName(text)}
-        style={{
-          borderBottomColor: '#ccc',
-          borderBottomWidth: 1,
-        }}
-        placeholder='First Name' />
-        <Text>{console.log(firstName)}</Text>
+      <AppTextInput placeholder='Username' icon='email' />
     </Screen>
   );
 }
