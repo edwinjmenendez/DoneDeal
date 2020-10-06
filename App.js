@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Platform, SafeAreaView, ScrollView, View, StyleSheet, TextInput, Text } from 'react-native';
+import { Platform, SafeAreaView, ScrollView, View, StyleSheet, TextInput, Text, Switch } from 'react-native';
 
 import WelcomeScreen from './src/Screens/WelcomeScreen';
 import ViewImageScreen from './src/Screens/ViewImageScreen.js';
@@ -18,11 +18,15 @@ import AppTextInput from './src/Components/AppTextInput';
 
 export default function App() {
 
-  const [firstName, setFirstName] = useState('')
+  const [isNew, setIsNew] = useState(false)
 
   return (
     <Screen>
-      <AppTextInput placeholder='Username' icon='email' />
+      <Switch value={isNew} onValueChange={newValue => {
+        console.log(newValue) // boolean
+        setIsNew(newValue)
+        // switch comp automatically set on upper left side, if IOS else upper right
+      }} />
     </Screen>
   );
 }
