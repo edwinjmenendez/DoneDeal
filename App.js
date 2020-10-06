@@ -15,6 +15,7 @@ import Icon from './src/Components/Icon';
 import ListItem from './src/Components/ListItem';
 import ListingScreen from './src/Screens/ListingScreen';
 import AppTextInput from './src/Components/AppTextInput';
+import AppPicker from './src/Components/AppPicker';
 
 export default function App() {
 
@@ -22,11 +23,8 @@ export default function App() {
 
   return (
     <Screen>
-      <Switch value={isNew} onValueChange={newValue => {
-        console.log(newValue) // boolean
-        setIsNew(newValue)
-        // switch comp automatically set on upper left side, if IOS else upper right
-      }} />
+      <AppPicker placeholder='Category' icon='apps' />
+      <AppTextInput placeholder='Email' icon='email' />
     </Screen>
   );
 }
