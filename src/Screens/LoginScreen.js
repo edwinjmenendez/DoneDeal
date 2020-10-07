@@ -1,5 +1,5 @@
 import { Formik } from 'formik'
-import React, { useState } from 'react'
+import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import AppButton from '../Components/AppButton'
 import AppTextInput from '../Components/AppTextInput'
@@ -10,9 +10,6 @@ import Screen from '../Components/Screen'
 // secureTextEntry automatically set to true
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
-  
   return (
     <Screen style={styles.container}>
       <Image
@@ -29,7 +26,7 @@ const LoginScreen = () => {
                 autoCorrect={false} 
                 icon='email'
                 keyboardType='email-address'
-                onChangeText={text => setEmail(text)}
+                onChangeText={handleChange('email')}
                 placeholder='Email'
                 textContentType='emailAddress'
               />
@@ -38,17 +35,17 @@ const LoginScreen = () => {
                 autoCorrect={false} 
                 icon='lock'
                 placeholder='Password'
-                onChangeText={text => setPassword(text)}
+                onChangeText={handleChange('password')}
                 secureTextEntry
                 textContentType='password'
+              />
+              <AppButton
+                title='Login'
+                onPress={handleSubmit}
               />
             </>
           )}
         </Formik>
-      <AppButton
-        title='Login'
-        onPress={() => console.log(email, password)}
-      />
     </Screen>
   )
 }
