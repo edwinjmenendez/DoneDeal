@@ -8,7 +8,7 @@ import AppText from './AppText/AppText'
 import Screen from './Screen'
 import PickerItem from './PickerItem'
 
-const AppPicker = ({ icon, items, placeholder }) => {
+const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => {
   const [modalVisible, setModelVisible] = useState(false)
 
   return (
@@ -21,7 +21,7 @@ const AppPicker = ({ icon, items, placeholder }) => {
               name={icon}
               size={20}
               style={styles.icon} />}
-          <AppText style={styles.text} >{placeholder}</AppText>
+          <AppText style={styles.text} >{selectedItem ? selectedItem.label : placeholder}</AppText>
           <MaterialCommunityIcons 
               // style={styles.icon}
               color={defaultStyles.colors.medium}
@@ -38,7 +38,10 @@ const AppPicker = ({ icon, items, placeholder }) => {
             renderItem={({ item }) =>
               <PickerItem
                 label={item.label}
-                onPress={() => console.log(item)} />
+                onPress={() => {
+                  setModelVisible(false)
+                  onSelectItem(item)
+                }} />
             }
           />
         </Screen>
