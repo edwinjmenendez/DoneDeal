@@ -16,28 +16,13 @@ import ListItem from './src/Components/ListItem';
 import ListingScreen from './src/Screens/ListingScreen';
 import AppTextInput from './src/Components/AppTextInput';
 import AppPicker from './src/Components/AppPicker';
+import LoginScreen from './src/Screens/LoginScreen';
 
-// temporary data
-const categories = [
-  { label: 'Furniture', value: 1, },
-  { label: 'Clothing', value: 2, },
-  { label: 'Cameras', value: 3, },
-]
+
 
 export default function App() {
-
-  const [category, setCategory] = useState()
-
   return (
-    <Screen>
-      <AppPicker 
-        items={categories} 
-        placeholder='Category' 
-        icon='apps'
-        selectedItem={category}
-        onSelectItem={item => setCategory(item)} />
-      <AppTextInput placeholder='Email' icon='email' />
-    </Screen>
+    <LoginScreen />
   );
 }
 
