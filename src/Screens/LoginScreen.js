@@ -7,6 +7,7 @@ import AppButton from '../Components/AppButton'
 import AppText from '../Components/AppText/AppText'
 import AppTextInput from '../Components/AppTextInput'
 import Screen from '../Components/Screen'
+import ErrorMessage from '../Components/ErrorMessage'
 
 // secureTextEntry automatically set to true
 
@@ -37,7 +38,7 @@ const LoginScreen = () => {
                 placeholder='Email'
                 textContentType='emailAddress'
               />
-              <AppText style={{color: 'red'}} >{errors.email}</AppText>
+              <ErrorMessage error={errors.email} />
               <AppTextInput
                 autoCapitalize='none'
                 autoCorrect={false} 
@@ -47,7 +48,7 @@ const LoginScreen = () => {
                 secureTextEntry
                 textContentType='password'
                 />
-              <AppText style={{color: 'red'}} >{errors.password}</AppText>
+              <ErrorMessage error={errors.password} />
               <AppButton
                 title='Login'
                 onPress={handleSubmit}
