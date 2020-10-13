@@ -39,7 +39,7 @@ const LoginScreen = () => {
           placeholder='Password'
           secureTextEntry
           textContentType='password'
-          />
+        />
         <SubmitButton title='Login' />
       </AppForm>
     </Screen>

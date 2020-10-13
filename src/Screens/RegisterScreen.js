@@ -22,9 +22,27 @@ const RegisterScreen = () => {
         <AppFormField
           icon='account'
           keyboardType='default'
-          name='Name'
+          name='name'
           placeholder='Name'
           textContentType='name'
+        />
+        <AppFormField
+          autoCapitalize='none'
+          autoCorrect={false} 
+          icon='email'
+          keyboardType='email-address'
+          name='email'
+          placeholder='Email'
+          textContentType='emailAddress'
+        />
+        <AppFormField
+          autoCapitalize='none'
+          autoCorrect={false} 
+          icon='lock'
+          name='password'
+          placeholder='Password'
+          secureTextEntry
+          textContentType='password'
         />
       </AppForm>
     </Screen>
