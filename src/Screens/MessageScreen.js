@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, View } from 'react-native'
+import { FlatList } from 'react-native'
 
 import ListItem from '../Components/ListItem'
 import ListItemDeleteAction from '../Components/ListItemDeleteAction';

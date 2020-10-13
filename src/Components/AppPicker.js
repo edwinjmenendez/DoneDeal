@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, Platform, TouchableWithoutFeedback, Modal, Button, FlatList } from 'react-native'
+import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button, FlatList } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 // import colors from '../config/colors'
