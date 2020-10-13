@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 import { StyleSheet } from 'react-native'
 
 import Screen from '../Components/Screen'
-import { AppForm, AppFormField } from '../Components/forms'
+import { AppForm, AppFormField, SubmitButton } from '../Components/forms'
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label('Name'),
@@ -44,6 +44,7 @@ const RegisterScreen = () => {
           secureTextEntry
           textContentType='password'
         />
+        <SubmitButton title='register' />
       </AppForm>
     </Screen>
   )
