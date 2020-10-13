@@ -10,15 +10,9 @@ const AppFormField = ({ name, ...otherProps }) => {
   return (
     <>
       <AppTextInput
-        // autoCapitalize='none'
-        // autoCorrect={false} 
-        // icon='email'
-        // keyboardType='email-address'
         onBlur={() => setFieldTouched(name)}
         onChangeText={handleChange(name)}
         {...otherProps}
-        // placeholder='Email'
-        // textContentType='emailAddress'
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>

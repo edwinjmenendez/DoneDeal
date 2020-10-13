@@ -8,6 +8,7 @@ import AppText from '../Components/AppText/AppText'
 import AppTextInput from '../Components/AppTextInput'
 import Screen from '../Components/Screen'
 import ErrorMessage from '../Components/ErrorMessage'
+import AppFormField from '../Components/AppFormField'
 
 // secureTextEntry automatically set to true
 
@@ -29,27 +30,24 @@ const LoginScreen = () => {
         >
           { ({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
             <>           
-              <AppTextInput
+              <AppFormField
                 autoCapitalize='none'
                 autoCorrect={false} 
                 icon='email'
                 keyboardType='email-address'
-                onBlur={() => setFieldTouched('email')}
-                onChangeText={handleChange('email')}
+                name='email'
                 placeholder='Email'
                 textContentType='emailAddress'
               />
-              <ErrorMessage error={errors.email} visible={touched.email} />
-              <AppTextInput
+              <AppFormField
                 autoCapitalize='none'
                 autoCorrect={false} 
                 icon='lock'
+                name='password'
                 placeholder='Password'
-                onChangeText={handleChange('password')}
                 secureTextEntry
                 textContentType='password'
                 />
-              <ErrorMessage error={errors.password} visible={touched.password} />
               <AppButton
                 title='Login'
                 onPress={handleSubmit}
