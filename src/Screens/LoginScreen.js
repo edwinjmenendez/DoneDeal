@@ -6,10 +6,6 @@ import Screen from '../Components/Screen'
 
 import { AppForm, AppFormField, SubmitButton } from '../Components/forms/index'
 
-// import AppFormField from '../Components/forms/AppFormField'
-// import SubmitButton from '../Components/forms/SubmitButton'
-// import AppForm from '../Components/forms/AppForm'
-
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
   password: Yup.string().required().min(4).label('Password')
