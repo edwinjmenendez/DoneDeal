@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 
 import Screen from '../Components/Screen'
 import AppFormField from '../Components/forms/AppFormField'
-import SubmitButton from '../Components/SubmitButton'
+import SubmitButton from '../Components/forms/SubmitButton'
 import AppForm from '../Components/forms/AppForm'
 
 const validationSchema = Yup.object().shape({

@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import { useFormikContext } from 'formik'
 
 import AppTextInput from '../AppTextInput'
-import ErrorMessage from '../ErrorMessage'
+import ErrorMessage from './ErrorMessage'
 
 const AppFormField = ({ name, ...otherProps }) => {
   const { setFieldTouched, handleChange, errors, touched } = useFormikContext()
