@@ -3,16 +3,10 @@ import { View, Text, StyleSheet, Image } from 'react-native'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
-import AppButton from '../Components/AppButton'
-import AppText from '../Components/AppText/AppText'
-import AppTextInput from '../Components/AppTextInput'
 import Screen from '../Components/Screen'
-import ErrorMessage from '../Components/ErrorMessage'
-import AppFormField from '../Components/AppFormField'
+import AppFormField from '../Components/forms/AppFormField'
 import SubmitButton from '../Components/SubmitButton'
-import AppForm from '../Components/AppForm'
-
-// secureTextEntry automatically set to true
+import AppForm from '../Components/forms/AppForm'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
