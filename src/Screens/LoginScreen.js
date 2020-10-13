@@ -10,6 +10,7 @@ import Screen from '../Components/Screen'
 import ErrorMessage from '../Components/ErrorMessage'
 import AppFormField from '../Components/AppFormField'
 import SubmitButton from '../Components/SubmitButton'
+import AppForm from '../Components/AppForm'
 
 // secureTextEntry automatically set to true
 
@@ -24,35 +25,31 @@ const LoginScreen = () => {
       <Image
         source={require('../assets/logo-red.png')}
         style={styles.logo} />
-        <Formik
-          initialValues={{ email: '', password: ',' }}
-          onSubmit={values => console.log(values)}
-          validationSchema={validationSchema}
-        >
-          { () => (
-            <>           
-              <AppFormField
-                autoCapitalize='none'
-                autoCorrect={false} 
-                icon='email'
-                keyboardType='email-address'
-                name='email'
-                placeholder='Email'
-                textContentType='emailAddress'
-              />
-              <AppFormField
-                autoCapitalize='none'
-                autoCorrect={false} 
-                icon='lock'
-                name='password'
-                placeholder='Password'
-                secureTextEntry
-                textContentType='password'
-                />
-              <SubmitButton title='Login' />
-            </>
-          )}
-        </Formik>
+      <AppForm
+        initialValues={{ email: '', password: ',' }}
+        onSubmit={values => console.log(values)}
+        validationSchema={validationSchema}
+      >
+        <AppFormField
+          autoCapitalize='none'
+          autoCorrect={false} 
+          icon='email'
+          keyboardType='email-address'
+          name='email'
+          placeholder='Email'
+          textContentType='emailAddress'
+        />
+        <AppFormField
+          autoCapitalize='none'
+          autoCorrect={false} 
+          icon='lock'
+          name='password'
+          placeholder='Password'
+          secureTextEntry
+          textContentType='password'
+          />
+        <SubmitButton title='Login' />
+      </AppForm>
     </Screen>
   )
 }
