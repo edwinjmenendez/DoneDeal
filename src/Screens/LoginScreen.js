@@ -9,6 +9,7 @@ import AppTextInput from '../Components/AppTextInput'
 import Screen from '../Components/Screen'
 import ErrorMessage from '../Components/ErrorMessage'
 import AppFormField from '../Components/AppFormField'
+import SubmitButton from '../Components/SubmitButton'
 
 // secureTextEntry automatically set to true
 
@@ -28,7 +29,7 @@ const LoginScreen = () => {
           onSubmit={values => console.log(values)}
           validationSchema={validationSchema}
         >
-          { ({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
+          { () => (
             <>           
               <AppFormField
                 autoCapitalize='none'
@@ -48,10 +49,7 @@ const LoginScreen = () => {
                 secureTextEntry
                 textContentType='password'
                 />
-              <AppButton
-                title='Login'
-                onPress={handleSubmit}
-              />
+              <SubmitButton title='Login' />
             </>
           )}
         </Formik>
