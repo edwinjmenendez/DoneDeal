@@ -1,13 +1,14 @@
 import React from 'react';
 
-import LoginScreen from './src/Screens/LoginScreen';
-import RegisterScreen from './src/Screens/RegisterScreen';
-
+import AppPicker from './src/Components/AppPicker'
+import Screen from './src/Components/Screen';
 
 
 export default function App() {
   return (
-    <RegisterScreen />
+    <Screen>
+      <AppPicker />
+    </Screen>
   );
 }
 
