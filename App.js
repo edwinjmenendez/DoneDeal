@@ -8,11 +8,13 @@ import RegisterScreen from './src/Screens/RegisterScreen'
 import ListingEditScreen from './src/Screens/ListingEditScreen';
 import ListItem from './src/Components/lists/ListItem';
 import MessageScreen from './src/Screens/MessageScreen';
+import Card from './src/Components/Card'
+import ListingScreen from './src/Screens/ListingScreen';
 
 export default function App() {
   return (
     <Screen>
-      <ListingEditScreen />
+      <ListingScreen />
       {/* <AppPicker /> */}
     </Screen>
   );

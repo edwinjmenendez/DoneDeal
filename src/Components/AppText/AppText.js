@@ -7,7 +7,7 @@ import defaultStyles from '../../config/styles'
 const AppText = ({ children, style }) => {
   return (
     // the second element overwrites the first  
-    <Text style={[defaultStyles.text, style]} >{children}</Text>
+    <Text numberOfLines={3} style={[defaultStyles.text, style]} >{children}</Text>
   )
 }
 
