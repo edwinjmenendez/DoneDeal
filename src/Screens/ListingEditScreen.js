@@ -2,8 +2,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import * as Yup from 'yup'
 
-import { AppForm, AppFormField } from '../Components/forms'
-import AppFormPicker from '../Components/forms/AppFormPicker'
+import { AppForm, AppFormField, AppFormPicker } from '../Components/forms'
 import Screen from '../Components/Screen'
 
 const validationSchema = Yup.object().shape({
