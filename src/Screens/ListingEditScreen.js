@@ -1,8 +1,10 @@
 import React from 'react'
+import { StyleSheet } from 'react-native'
 import * as Yup from 'yup'
 
 import { AppForm, AppFormField } from '../Components/forms'
 import AppFormPicker from '../Components/forms/AppFormPicker'
+import Screen from '../Components/Screen'
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(2).label('Title'),
@@ -19,33 +21,42 @@ const categories = [
 
 const ListingEditScreen = () => {
   return (
-    <AppForm
-      initialValues={{
-        title: '',
-        price: '',
-        category: '',
-        description: ''
-      }}
-      onSubmit={values => console.log(values)}
-      validationSchema={validationSchema}
-    >
-      <AppFormField
-        name='title'
-        placeholder='Title'
-      />
-      <AppFormField
-        name='price'
-        placeholder='Price'
-      />
-      <AppFormField
-        name='description'
-        placeholder='Description'
-      />
-      <AppFormPicker 
-        items={categories}
-      />
-    </AppForm>
+    <Screen style={styles.container}>
+      <AppForm
+        initialValues={{
+          title: '',
+          price: '',
+          category: '',
+          description: ''
+        }}
+        onSubmit={values => console.log(values)}
+        validationSchema={validationSchema}
+      >
+        <AppFormField
+          name='title'
+          placeholder='Title'
+        />
+        <AppFormField
+          name='price'
+          placeholder='Price'
+        />
+        <AppFormPicker 
+          items={categories}
+          placeholder='Category'
+        />
+        <AppFormField
+          name='description'
+          placeholder='Description'
+        />
+      </AppForm>
+    </Screen>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 10, // padding does not work
+  }
+})
 
 export default ListingEditScreen

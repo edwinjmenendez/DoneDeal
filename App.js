@@ -6,11 +6,12 @@ import { AppFormField } from './src/Components/forms';
 import Screen from './src/Components/Screen';
 import RegisterScreen from './src/Screens/RegisterScreen'
 import ListingEditScreen from './src/Screens/ListingEditScreen';
+import ListItem from './src/Components/lists/ListItem';
 
 export default function App() {
   return (
     <Screen>
-      <RegisterScreen />
+      <ListingEditScreen />
       {/* <AppPicker /> */}
     </Screen>
   );

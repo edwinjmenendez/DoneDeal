@@ -63,9 +63,12 @@ const styles = StyleSheet.create({
   icon: {
     margin: 10,
   },
+  placeholder: {
+    color: defaultStyles.colors.light
+  },
   text: {
     flex: 1,
-  }
+  },
 })
 
 
