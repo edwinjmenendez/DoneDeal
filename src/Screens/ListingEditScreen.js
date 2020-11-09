@@ -14,9 +14,51 @@ const validationSchema = Yup.object().shape({
 })
 
 const categories = [
-  { label: 'Furniture', value: 1 },
-  { label: 'Clothing', value: 2 },
-  { label: 'Camera', value: 3 },
+  { 
+    backgroundColor: '#fc5c65',    
+    icon: 'floor-lamp', 
+    label: 'Furniture', 
+    value: 1 },
+    {
+    backgroundColor: '#fd9644',
+    icon: 'car', 
+    label: 'Cars', 
+    value: 2 },
+  { 
+    backgroundColor: '#fed330',
+    icon: 'camera', 
+    label: 'Camera', 
+    value: 3 },
+  { 
+    backgroundColor: '#26de81',
+    icon: 'cards', 
+    label: 'Games', 
+    value: 4 },
+  { 
+    backgroundColor: '#2bcbba',
+    icon: 'shoe-heel', 
+    label: 'Clothing', 
+    value: 5 },
+  { 
+    backgroundColor: '#45aaf2',
+    icon: 'basketball', 
+    label: 'Sports', 
+    value: 6 },
+  { 
+    backgroundColor: '#4b7bec',
+    icon: 'headphones', 
+    label: 'Music & Movies', 
+    value: 7 },
+  { 
+    backgroundColor: '#4b7bec',
+    icon: 'book', 
+    label: 'Books', 
+    value: 8 },
+  { 
+    backgroundColor: 'gray',
+    icon: 'file-presentation-box', 
+    label: 'Other', 
+    value: 9 },
 ]
 
 const ListingEditScreen = () => {
