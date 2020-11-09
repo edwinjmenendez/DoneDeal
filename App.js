@@ -12,7 +12,7 @@ import MessageScreen from './src/Screens/MessageScreen';
 export default function App() {
   return (
     <Screen>
-      <MessageScreen />
+      <ListingEditScreen />
       {/* <AppPicker /> */}
     </Screen>
   );
