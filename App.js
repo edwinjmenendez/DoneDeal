@@ -10,7 +10,7 @@ import ListingEditScreen from './src/Screens/ListingEditScreen';
 export default function App() {
   return (
     <Screen>
-      <ListingEditScreen />
+      <RegisterScreen />
       {/* <AppPicker /> */}
     </Screen>
   );
