@@ -3,7 +3,7 @@ import { FlatList } from 'react-native'
 
 import ListItem from '../Components/lists/ListItem'
 import ListItemDeleteAction from '../Components/lists/ListItemDeleteAction';
-import ListItemSeparator from '../Components/ListItemSeparator';
+import ListItemSeparator from '../Components/lists/ListItemSeparator';
 import Screen from '../Components/Screen';
 
 // dummyData
