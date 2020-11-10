@@ -14,7 +14,7 @@ import ListingScreen from './src/Screens/ListingScreen';
 export default function App() {
   return (
     <Screen>
-      <ListingEditScreen />
+      <MessageScreen />
       {/* <AppPicker /> */}
     </Screen>
   );

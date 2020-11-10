@@ -19,9 +19,9 @@ const ListItem = ({ title, subTitle, image, onPress, renderRightActions, IconCom
           {/* if no image is provided, extra width and props for image */}
           {image && <Image source={image} style={styles.image} />}
           <View style={styles.textDetailContainer} >
-            <AppText style={styles.title} > {title} </AppText>
+            <AppText numberOfLines={1} style={styles.title} > {title} </AppText>
             {/* if no subtitle is not provided, it wont render and my title will be centered with image if given one */}
-            {subTitle && <AppText style={styles.subTitle} > {subTitle} </AppText>}
+            {subTitle && <AppText numberOfLines={2} style={styles.subTitle} > {subTitle} </AppText>}
           </View>
           <MaterialCommunityIcons 
             // style={styles.icon}
