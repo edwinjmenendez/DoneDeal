@@ -8,13 +8,13 @@ import AppText from './AppText/AppText'
 import Screen from './Screen'
 import PickerItem from './PickerItem'
 
-const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => {
+const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width }) => {
   const [modalVisible, setModelVisible] = useState(false)
 
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModelVisible(true)} >
-        <View style={styles.constainer} >
+        <View style={[styles.container, { width }]} >
           { icon && 
             <MaterialCommunityIcons 
               color={defaultStyles.colors.medium}
@@ -56,7 +56,7 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => 
 }
 
 const styles = StyleSheet.create({
-  constainer: {
+  container: {
     backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
     flexDirection: 'row',

@@ -5,9 +5,10 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 // import colors from '../config/colors'
 import defaultStyles from '../config/styles'
 
-const AppTextInput = ({ icon, ...otherProps }) => {
+const AppTextInput = ({ icon, width, ...otherProps }) => {
+  // if width is set on other components that use AppTextInput, it will be updated for textfield on View component line
   return (
-    <View style={styles.constainer} >
+    <View style={[styles.container, { width }]} >
       { icon && 
         <MaterialCommunityIcons 
           color={defaultStyles.colors.medium}
@@ -20,7 +21,7 @@ const AppTextInput = ({ icon, ...otherProps }) => {
 }
 
 const styles = StyleSheet.create({
-  constainer: {
+  container: {
     backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
     flexDirection: 'row',
