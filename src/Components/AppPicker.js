@@ -8,7 +8,14 @@ import AppText from './AppText/AppText'
 import Screen from './Screen'
 import PickerItem from './PickerItem'
 
-const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width }) => {
+const AppPicker = ({ 
+  icon, 
+  items, 
+  onSelectItem, 
+  placeholder, 
+  PickerItemComponent = PickerItem,
+  selectedItem, 
+  width }) => {
   const [modalVisible, setModelVisible] = useState(false)
 
   return (
@@ -41,12 +48,13 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width
             data={items}
             keyExtractor={item => item.value.toString()}
             renderItem={({ item }) =>
-              <PickerItem
+              <PickerItemComponent
                 label={item.label}
                 onPress={() => {
                   setModelVisible(false)
                   onSelectItem(item)
-                }} />
+                }} 
+              />
             }
           />
         </Screen>
