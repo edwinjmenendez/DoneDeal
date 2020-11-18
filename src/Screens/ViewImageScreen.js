@@ -34,12 +34,12 @@ const styles = StyleSheet.create({
   },
   leftBox: {
     position: 'absolute',
-    top: Platform.OS === 'android' ? StatusBar.currentHeight + 40 : 40,
+    top: 40,
     left: 30
   },
   rightBox: {
     position: 'absolute',
-    top: Platform.OS === 'android' ? StatusBar.currentHeight + 40 : 40,
+    top: 40,
     right: 30
   },
 })
