@@ -5,6 +5,7 @@ import * as Permissions from 'expo-permissions';
 import ViewImageScreen from './src/Screens/ViewImageScreen'
 import Screen from './src/Components/Screen';
 import { Button, Image, Text, View } from 'react-native';
+import ImageInput from './src/Components/ImageInput';
 
 export default function App() {
 
@@ -34,8 +35,7 @@ export default function App() {
   
   return (
     <Screen>
-      <Button title='Select the Image' onPress={selectImage} />
-      <Image source={{ uri: imageURI }} style={{width: 200, height: 200}} />
+      <ImageInput imageURI={imageURI} onChangeImage={uri => setImageURI(uri)} />
     </Screen>
   );
 }
