@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
 
 import ViewImageScreen from './src/Screens/ViewImageScreen'
 import Screen from './src/Components/Screen';
@@ -7,6 +8,7 @@ import { Text, View } from 'react-native';
 
 export default function App() {
   const requestPermission = async () => {
+    Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION)
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
     console.log(granted)
     if (!granted) {
