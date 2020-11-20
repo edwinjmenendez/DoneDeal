@@ -1,11 +1,17 @@
-import React from 'react'
-import { StyleSheet } from 'react-native'
-import * as Yup from 'yup'
+import React, { useEffect, useState } from 'react';
+import * as Location from 'expo-location';
+import { StyleSheet } from 'react-native';
+import * as Yup from 'yup';
 
-import { AppForm, AppFormField, AppFormPicker, SubmitButton } from '../Components/forms'
+import { 
+  AppForm, 
+  AppFormField, 
+  AppFormPicker, 
+  SubmitButton 
+} from '../Components/forms'
 import CategoryPickerItem from '../Components/CategoryPickerItem'
-import Screen from '../Components/Screen'
 import FormImagePicker from '../Components/forms/FormImagePicker'
+import Screen from '../Components/Screen'
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(2).label('Title'),
@@ -20,50 +26,72 @@ const categories = [
     backgroundColor: '#fc5c65',    
     icon: 'floor-lamp', 
     label: 'Furniture', 
-    value: 1 },
+    value: 1 
+  },
     {
     backgroundColor: '#fd9644',
     icon: 'car', 
     label: 'Cars', 
-    value: 2 },
+    value: 2 
+  },
   { 
     backgroundColor: '#fed330',
     icon: 'camera', 
     label: 'Camera', 
-    value: 3 },
+    value: 3 
+  },
   { 
     backgroundColor: '#26de81',
     icon: 'cards', 
     label: 'Games', 
-    value: 4 },
+    value: 4 
+  },
   { 
     backgroundColor: '#2bcbba',
     icon: 'shoe-heel', 
     label: 'Clothing', 
-    value: 5 },
+    value: 5 
+  },
   { 
     backgroundColor: '#45aaf2',
     icon: 'basketball', 
     label: 'Sports', 
-    value: 6 },
+    value: 6 
+  },
   { 
     backgroundColor: '#4b7bec',
     icon: 'headphones', 
     label: 'Music & Movies', 
-    value: 7 },
+    value: 7 
+  },
   { 
     backgroundColor: '#4b7bec',
     icon: 'book', 
     label: 'Books', 
-    value: 8 },
+    value: 8 
+  },
   { 
     backgroundColor: 'gray',
     icon: 'file-presentation-box', 
     label: 'Other', 
-    value: 9 },
+    value: 9 
+  },
 ]
 
 const ListingEditScreen = () => {
+   const [location, setLocation] = useState();
+
+  const requestLocation = async () => {
+    const { granted } = await Location.requestPermissionsAsync();
+    if (!granted) return;
+    const { coords: { latitude, longitude } } = await Location.getLastKnownPositionAsync(); // for performance reasons; we'll use lastKnownLoc for now
+    setLocation({ latitude, longitude });
+  }
+
+  useEffect(() => {
+    requestLocation();
+  }, [])
+  
   return (
     <Screen style={styles.container}>
       <AppForm
