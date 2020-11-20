@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Screen from './src/Components/Screen';
@@ -11,26 +11,32 @@ export default function App() {
   const Stack = createStackNavigator();
 
   // dummy components
+  const Link = () => {
+    // only Stack.Screens have access to navigation prop; but if you access navHook; you'll have access to that prop
+    const navigation = useNavigation();
+
+    return (
+      <Button
+        title='View Tweets Now'
+        onPress={() => navigation.navigate('TweetDetails')}
+      />
+    )
+  }
+
   const Tweets = ({ navigation }) => (
       <Screen>
         <Text>Tweets</Text>
-        <Button
-          title='View Tweets'
-          onPress={() => navigation.navigate('TweetDetails')}
-        />
+        <Link />
       </Screen>
     )
   const TweetDetails = ({ navigation }) => (
       <Screen>
         <Text>Tweet Details</Text>
-        <Button
-          title='View Tweets'
-          onPress={() => navigation.navigate('Tweets')}
-        />
       </Screen>
     )
 
   const StackNavigator = () => (
+    // navigator ONLY takes screen components
     <Stack.Navigator initialRouteName='Tweets' >
       <Stack.Screen name='TweetDetails' component={TweetDetails} />
       <Stack.Screen name='Tweets' component={Tweets} />
@@ -38,6 +44,7 @@ export default function App() {
   )
 
   return (
+    // navContainer ONLY takes navigator with screen components
     <NavigationContainer>
       <StackNavigator />
     </NavigationContainer>
