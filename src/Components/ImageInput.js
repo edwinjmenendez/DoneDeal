@@ -10,8 +10,8 @@ const ImageInput = ({ imageURI, onChangeImage }) => {
 
   // reusable component; takes care of user permission
   useEffect(() => {
-    requestPermission();
-  }, [])
+    requestPermission(); 
+  }, []) // passing in empty arr equivalent to CompDidMount; only updates once
   
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
