@@ -27,9 +27,9 @@ export default function App() {
         <Link />
       </Screen>
     )
-    const TweetDetails = () => (
+    const TweetDetails = ({ params }) => (
       <Screen style={styles.container} >
-        <Text>Tweet Details</Text>
+        <Text>Tweet Details </Text>
       </Screen>
     )
     
@@ -44,20 +44,8 @@ export default function App() {
         inactiveTintColor: 'black', 
         }}
       >
-        <Tab.Screen
-          name='Tweets'
-          component={Tweets}
-          options={{
-            tabBarIcon: ({ size, color }) => <MaterialCommunityIcons name='home' size={size} color={color} />
-          }}
-        />
-        <Tab.Screen
-          name='Account'
-          component={MyAccountScreen}
-          options={{
-            tabBarIcon: ({ size, color }) => <MaterialCommunityIcons name='account ' size={size} color={color} />
-          }}
-        />
+        <Tab.Screen name='Tweets'component={StackNavigator} />
+        <Tab.Screen name='Account' component={MyAccountScreen} />
       </Tab.Navigator>
     )
 
@@ -78,7 +66,7 @@ export default function App() {
         options={{
           headerStyle: { backgroundColor: 'gold' },
           headerTintColor: 'purple',
-          headerShown: false,
+          // headerShown: false,
         }} />
       <Stack.Screen name='Tweets' component={Tweets} />
     </Stack.Navigator>
