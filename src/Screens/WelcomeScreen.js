@@ -1,9 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Image, ImageBackground, Text, SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
 
 import AppButton from '../Components/AppButton';
 
 const WelcomeScreen = () => {
+  // only Stack.Screens have access to navigation prop; but if you use navHook; you'll have access to that prop
+  const navigation = useNavigation();
+
   return (
     // i guess style is needed for the imageBackground or it wont work
     <ImageBackground
@@ -19,8 +23,8 @@ const WelcomeScreen = () => {
         <Text style={styles.tagline} >Sell What You Dont Need</Text>
       </SafeAreaView>
       <View style={styles.buttonContainer}>
-        <AppButton title={'login'} onPress={() => console.log('login')} />
-        <AppButton title={'signup'} color='secondary' onPress={() => console.log('signup')} />
+        <AppButton title={'login'} onPress={() => navigation.navigate('LoginScreen')} />
+        <AppButton title={'signup'} color='secondary' onPress={() => navigation.navigate('RegisterScreen')} />
       </View>
     </ImageBackground>
   )

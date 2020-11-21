@@ -7,11 +7,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Screen from './src/Components/Screen';
 import MyAccountScreen from './src/Screens/MyAccountScreen';
+import WelcomeScreen from './src/Screens/WelcomeScreen';
+import RegisterScreen from './src/Screens/RegisterScreen';
+import LoginScreen from './src/Screens/LoginScreen';
 
 export default function App() {
   // dummy components
   const Link = () => {
-    // only Stack.Screens have access to navigation prop; but if you access navHook; you'll have access to that prop
+    // only Stack.Screens have access to navigation prop; but if you use navHook; you'll have access to that prop
     const navigation = useNavigation();
     return (
       <Button
@@ -32,7 +35,7 @@ export default function App() {
         <Text>Tweet Details </Text>
       </Screen>
     )
-    
+
     // gives us access to the Screen/Nav keys which should be wrapped in a Tab NavContainer
     const Tab = createBottomTabNavigator();
     const TabNavigator = () => (
@@ -41,7 +44,10 @@ export default function App() {
         activeBackgroundColor: 'gold',
         activeTintColor: 'purple',
         inactiveBackgroundColor: '#eee',
-        inactiveTintColor: 'black', 
+        inactiveTintColor: 'black',
+        safeAreaInsets: {
+          bottom: 0,
+        }
         }}
       >
         <Tab.Screen name='Tweets'component={StackNavigator} />
@@ -72,10 +78,19 @@ export default function App() {
     </Stack.Navigator>
   )
 
+  // implement nav flowe for unauthenticated users using stack nav called authNav
+  const AuthNavigator = () => (
+    <Stack.Navigator initialRouteName='WelcomeScreen' screenOptions={{ headerShown: false }} >
+      <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} />
+      <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
+      <Stack.Screen name='LoginScreen' component={LoginScreen} />
+    </Stack.Navigator>
+    )
+
   return (
     // navContainer ONLY takes ONE navigator with screen components
     <NavigationContainer>
-      <TabNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
