@@ -7,13 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Screen from './src/Components/Screen';
 import MyAccountScreen from './src/Screens/MyAccountScreen';
-import WelcomeScreen from './src/Screens/WelcomeScreen';
-import RegisterScreen from './src/Screens/RegisterScreen';
-import LoginScreen from './src/Screens/LoginScreen';
-import ListingScreen from './src/Screens/ListingScreen';
-import ListingEditScreen from './src/Screens/ListingEditScreen';
-import ListingDetailsScreen from './src/Screens/ListingDetailsScreen';
-import MessageScreen from './src/Screens/MessageScreen';
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
   // dummy components
@@ -82,42 +76,10 @@ export default function App() {
     </Stack.Navigator>
   )
 
-  // implement nav flowe for unauthenticated users using stack nav called authNav
-  const AuthNavigator = () => (
-    <Stack.Navigator initialRouteName='WelcomeScreen' screenOptions={{ headerShown: false }} >
-      <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} />
-      <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
-      <Stack.Screen name='LoginScreen' component={LoginScreen} />
-      <Stack.Screen name='AppNavigator' component={AppNavigator} />
-      <Stack.Screen name='FeedNavigator' component={FeedNavigator} />
-      <Stack.Screen name='AccountNavigator' component={AccountNavigator} />
-    </Stack.Navigator>
-    )
-
-  const AppNavigator = () => (
-    <Tab.Navigator>
-      <Tab.Screen name='ListingScreen' component={ListingScreen} />
-      <Tab.Screen name='ListingEditScreen' component={ListingEditScreen} />
-      <Tab.Screen name='MyAccountScreen' component={MyAccountScreen} />
-    </Tab.Navigator>
-  )
-
-  const FeedNavigator = () => (
-    <Stack.Navigator>
-      <Stack.Screen name='ListingDetailsScreen' component={ListingDetailsScreen} />
-    </Stack.Navigator>
-  )
-
-  const AccountNavigator = () => (
-    <Stack.Navigator>
-      <Stack.Screen name='MessageScreen' component={MessageScreen} />
-    </Stack.Navigator>
-  )
-
   return (
     // navContainer ONLY takes ONE navigator with screen components
     <NavigationContainer>
-      <AuthNavigator />
+      <AppNavigator />
     </NavigationContainer>
   );
 }
