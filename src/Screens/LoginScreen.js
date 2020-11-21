@@ -5,6 +5,7 @@ import * as Yup from 'yup'
 import Screen from '../Components/Screen'
 
 import { AppForm, AppFormField, SubmitButton } from '../Components/forms/index'
+import { useNavigation } from '@react-navigation/native'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
@@ -12,6 +13,8 @@ const validationSchema = Yup.object().shape({
 })
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <Screen style={styles.container}>
       <Image
@@ -19,7 +22,10 @@ const LoginScreen = () => {
         style={styles.logo} />
       <AppForm
         initialValues={{ email: '', password: ',' }}
-        onSubmit={values => console.log(values)}
+        onSubmit={values => {
+          console.log(values)
+          navigation.navigate('AppNavigator')
+        }}
         validationSchema={validationSchema}
       >
         <AppFormField
