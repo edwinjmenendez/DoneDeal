@@ -2,41 +2,51 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Screen from './src/Components/Screen';
-
+import MyAccountScreen from './src/Screens/MyAccountScreen';
 
 export default function App() {
-  // gives us access to the Screen/Nav keys which should be wrapped in a navContainer 
-  const Stack = createStackNavigator();
-
   // dummy components
   const Link = () => {
     // only Stack.Screens have access to navigation prop; but if you access navHook; you'll have access to that prop
     const navigation = useNavigation();
-
     return (
       <Button
-        title='View Tweets Now'
-        onPress={() => navigation.navigate('TweetDetails', { id: 1 })}
+      title='View Tweets Now'
+      onPress={() => navigation.navigate('TweetDetails', { id: 1 })}
       />
-    )
-  }
-
-  const Tweets = ({ navigation }) => (
-      <Screen>
+      )
+    }
+    
+    const Tweets = ({ navigation }) => (
+      <Screen style={styles.container} >
         <Text>Tweets</Text>
         <Link />
       </Screen>
     )
-  const TweetDetails = ({ route }) => (
-      <Screen>
-        <Text>Tweet Details {route.params.id} </Text>
+    const TweetDetails = () => (
+      <Screen style={styles.container} >
+        <Text>Tweet Details</Text>
       </Screen>
     )
+    
+    // gives us access to the Screen/Nav keys which should be wrapped in a Tab NavContainer
+    const Tab = createBottomTabNavigator();
+    const TabNavigator = () => (
+      // screens represent a tab
+      <Tab.Navigator>
+        <Tab.Screen name='Tweets' component={Tweets} />
+        <Tab.Screen name='Tweet details' component={TweetDetails} />
+        <Tab.Screen name='Account' component={MyAccountScreen} />
+      </Tab.Navigator>
+    )
 
-  const StackNavigator = () => (
-    <Stack.Navigator 
+    // gives us access to the Screen/Nav keys which should be wrapped in a Stack navContainer 
+    const Stack = createStackNavigator();
+    const StackNavigator = () => (
+      <Stack.Navigator 
       initialRouteName='Tweets'
       // stlye applies to all screens unless overwritten 
       screenOptions={{
@@ -57,9 +67,9 @@ export default function App() {
   )
 
   return (
-    // navContainer ONLY takes navigator with screen components
+    // navContainer ONLY takes ONE navigator with screen components
     <NavigationContainer>
-      <StackNavigator />
+      <TabNavigator />
     </NavigationContainer>
   );
 }
