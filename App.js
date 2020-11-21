@@ -36,9 +36,22 @@ export default function App() {
     )
 
   const StackNavigator = () => (
-    // navigator ONLY takes screen components
-    <Stack.Navigator initialRouteName='Tweets' >
-      <Stack.Screen name='TweetDetails' component={TweetDetails} options={({ route }) => ({ title: route.params.id })} />
+    <Stack.Navigator 
+      initialRouteName='Tweets'
+      // stlye applies to all screens unless overwritten 
+      screenOptions={{
+        headerStyle: { backgroundColor: 'gold' },
+        headerTintColor: 'purple',
+      }}  
+    >
+      <Stack.Screen 
+        name='TweetDetails'
+        component={TweetDetails}
+        options={{
+          headerStyle: { backgroundColor: 'gold' },
+          headerTintColor: 'purple',
+          headerShown: false,
+        }} />
       <Stack.Screen name='Tweets' component={Tweets} />
     </Stack.Navigator>
   )
