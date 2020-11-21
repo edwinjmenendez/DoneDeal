@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -36,10 +37,27 @@ export default function App() {
     const Tab = createBottomTabNavigator();
     const TabNavigator = () => (
       // screens represent a tab
-      <Tab.Navigator>
-        <Tab.Screen name='Tweets' component={Tweets} />
-        <Tab.Screen name='Tweet details' component={TweetDetails} />
-        <Tab.Screen name='Account' component={MyAccountScreen} />
+      <Tab.Navigator tabBarOptions={{ 
+        activeBackgroundColor: 'gold',
+        activeTintColor: 'purple',
+        inactiveBackgroundColor: '#eee',
+        inactiveTintColor: 'black', 
+        }}
+      >
+        <Tab.Screen
+          name='Tweets'
+          component={Tweets}
+          options={{
+            tabBarIcon: ({ size, color }) => <MaterialCommunityIcons name='home' size={size} color={color} />
+          }}
+        />
+        <Tab.Screen
+          name='Account'
+          component={MyAccountScreen}
+          options={{
+            tabBarIcon: ({ size, color }) => <MaterialCommunityIcons name='account ' size={size} color={color} />
+          }}
+        />
       </Tab.Navigator>
     )
 
