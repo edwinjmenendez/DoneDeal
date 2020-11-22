@@ -24,7 +24,7 @@ const LoginScreen = () => {
         initialValues={{ email: '', password: ',' }}
         onSubmit={values => {
           console.log(values)
-          navigation.navigate('AppNavigator')
+          // navigation.navigate('AppNavigator')
         }}
         validationSchema={validationSchema}
       >

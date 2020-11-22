@@ -6,10 +6,10 @@ import LoginScreen from '../Screens/LoginScreen';
 
 const Stack = createStackNavigator();
 const AuthNavigator = () => (
-  <Stack.Navigator initialRouteName='WelcomeScreen' screenOptions={{ headerShown: false }} >
-    <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} />
-    <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
-    <Stack.Screen name='LoginScreen' component={LoginScreen} />
+  <Stack.Navigator initialRouteName='WelcomeScreen' >
+    <Stack.Screen name='Welcome' component={WelcomeScreen} options={{ headerShown: false }} />
+    <Stack.Screen name='Register' component={RegisterScreen} />
+    <Stack.Screen name='Login' component={LoginScreen} />
   </Stack.Navigator>
   )
 

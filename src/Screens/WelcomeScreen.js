@@ -23,8 +23,8 @@ const WelcomeScreen = () => {
         <Text style={styles.tagline} >Sell What You Dont Need</Text>
       </SafeAreaView>
       <View style={styles.buttonContainer}>
-        <AppButton title={'login'} onPress={() => navigation.navigate('LoginScreen')} />
-        <AppButton title={'signup'} color='secondary' onPress={() => navigation.navigate('RegisterScreen')} />
+        <AppButton title={'login'} onPress={() => navigation.navigate('Login')} />
+        <AppButton title={'signup'} color='secondary' onPress={() => navigation.navigate('Register')} />
       </View>
     </ImageBackground>
   )

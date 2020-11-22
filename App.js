@@ -8,6 +8,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Screen from './src/Components/Screen';
 import MyAccountScreen from './src/Screens/MyAccountScreen';
 import AppNavigator from './src/navigation/AppNavigator';
+import AuthNavigator from './src/navigation/AuthNavigator';
+import navigationTheme from './src/navigation/navigationTheme';
 
 export default function App() {
   // dummy components
@@ -78,8 +80,8 @@ export default function App() {
 
   return (
     // navContainer ONLY takes ONE navigator with screen components
-    <NavigationContainer>
-      <AppNavigator />
+    <NavigationContainer theme={navigationTheme} >
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
