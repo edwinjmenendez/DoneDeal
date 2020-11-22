@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import { View, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
