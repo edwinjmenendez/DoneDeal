@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Image, ImageBackground, Text, SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
 
 import AppButton from '../Components/AppButton';
+import routes from '../navigation/routes';
 
 const WelcomeScreen = () => {
   // only Stack.Screens have access to navigation prop; but if you use navHook; you'll have access to that prop
@@ -23,8 +24,8 @@ const WelcomeScreen = () => {
         <Text style={styles.tagline} >Sell What You Dont Need</Text>
       </SafeAreaView>
       <View style={styles.buttonContainer}>
-        <AppButton title={'login'} onPress={() => navigation.navigate('Login')} />
-        <AppButton title={'signup'} color='secondary' onPress={() => navigation.navigate('Register')} />
+        <AppButton title={'login'} onPress={() => navigation.navigate(routes.LOGIN)} />
+        <AppButton title={'signup'} color='secondary' onPress={() => navigation.navigate(routes.REGISTER)} />
       </View>
     </ImageBackground>
   )

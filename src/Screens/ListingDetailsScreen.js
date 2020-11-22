@@ -7,7 +7,7 @@ import colors from '../config/colors'
 
 const ListingDetailsScreen = ({ route }) => {
   // since details components is a screen in the FeedNav. component; we have access to the route prop from listingScreen
-  // We have access because we set second argument to navigation.navigate('ListingDetails', item) <-- item
+  // We have access because we set second argument to navigation.navigate(routes.LISTING_DETAILS, item) <-- item
   const listing = route.params;
   return (
     <View>
