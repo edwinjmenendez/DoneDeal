@@ -4,20 +4,23 @@ import AppText from '../Components/AppText/AppText'
 import ListItem from '../Components/lists/ListItem'
 import colors from '../config/colors'
 
-const ListingDetailsScreen = () => {
+const ListingDetailsScreen = ({ route }) => {
+  // since details components is a screen in the FeedNav. component; we have access to the route prop from listingScreen
+  // We have access because we set second argument to navigation.navigate('ListingDetails', item) <-- item
+  const listing = route.params;
   return (
     <View>
       <Image
-        source={require('../assets/jacket.jpg')}
+        source={listing.image}
         style={styles.productImage}/>
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title} >Red jacket for sale</AppText>
-        <AppText style={styles.price} >$100</AppText>
+        <AppText style={styles.title} >{listing.title}</AppText>
+        <AppText style={styles.price} >${listing.price}</AppText>
       </View>
       <View style={styles.userContainer} >
         <ListItem
-          image={require('../assets/mosh.jpg')}
-          title={'Mosh Menendez'}
+          image={require('../assets/edwin.jpg')}
+          title={'Edwin Menendez'}
           subTitle={'5 Listings'}
         />
       </View>

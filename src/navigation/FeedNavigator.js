@@ -7,8 +7,8 @@ import ListingDetailsScreen from '../Screens/ListingDetailsScreen';
 const Stack = createStackNavigator();
 const FeedNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen name='ListingScreen' component={ListingScreen} />
-    <Stack.Screen name='ListingDetailsScreen' component={ListingDetailsScreen} />
+    <Stack.Screen name='Listings' component={ListingScreen} />
+    <Stack.Screen name='ListingDetails' component={ListingDetailsScreen} />
   </Stack.Navigator>
 )
 
