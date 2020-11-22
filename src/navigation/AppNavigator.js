@@ -9,9 +9,9 @@ const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen name='ListingScreen' component={ListingScreen} />
-    <Tab.Screen name='ListingEditScreen' component={ListingEditScreen} />
-    <Tab.Screen name='MyAccountScreen' component={MyAccountScreen} />
+    <Tab.Screen name='Listings' component={ListingScreen} />
+    <Tab.Screen name='ListingEdit' component={ListingEditScreen} />
+    <Tab.Screen name='Account' component={MyAccountScreen} />
   </Tab.Navigator>
 )
 

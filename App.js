@@ -81,7 +81,7 @@ export default function App() {
   return (
     // navContainer ONLY takes ONE navigator with screen components
     <NavigationContainer theme={navigationTheme} >
-      <AuthNavigator />
+      <AppNavigator />
     </NavigationContainer>
   );
 }
