@@ -12,7 +12,7 @@ const ListingDetailsScreen = ({ route }) => {
   return (
     <View>
       <Image
-        source={listing.image}
+        source={listing.images}
         style={styles.productImage}/>
       <View style={styles.detailsContainer}>
         <AppText style={styles.title} >{listing.title}</AppText>
