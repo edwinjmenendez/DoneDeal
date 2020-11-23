@@ -23,10 +23,9 @@ const Card = ({ title, subTitle, imageUrl, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 20,
-    marginVertical: 10,
     backgroundColor: colors.white,
     borderRadius: 15,
+    marginBottom: 20,
     overflow: 'hidden', // allows for borderRadius to show
   },
   detailsContainer: {
