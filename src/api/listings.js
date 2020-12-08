@@ -27,6 +27,7 @@ const addListings = listing => {
   // call post request
   return client.post(endpoint, data);
 }
+
 export default {
   addListings,
   getListings,
