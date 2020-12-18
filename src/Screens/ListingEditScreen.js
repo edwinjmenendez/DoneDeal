@@ -96,15 +96,16 @@ const ListingEditScreen = () => {
     const result = await listingsApi.addListings({...listing, location}, 
       progress => setProgress(progress)
       );
-    setUploadScreenVisible(false);
     
-    if (!result.ok) return alert('could not upload data');
-    // alert('Success'); 
+    if (!result.ok) {
+      setUploadScreenVisible(false);
+      alert('could not upload data');
+    }
   }
 
   return (
     <Screen style={styles.container}>
-      <UploadScreen visible={uploadScreenVisible} progress={progress} />
+      <UploadScreen onDone={() => setUploadScreenVisible(false)} visible={uploadScreenVisible} progress={progress} />
       <AppForm
         initialValues={{
           title: '',
