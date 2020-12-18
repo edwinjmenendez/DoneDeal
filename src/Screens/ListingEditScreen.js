@@ -10,6 +10,7 @@ import {
 } from '../Components/forms';
 import CategoryPickerItem from '../Components/CategoryPickerItem';
 import FormImagePicker from '../Components/forms/FormImagePicker';
+import listingsApi from '../api/listings';
 import Screen from '../Components/Screen';
 import useLocation from '../hooks/useLocation';
 
@@ -81,6 +82,14 @@ const categories = [
 const ListingEditScreen = () => {
   const location = useLocation();
 
+  const handleSubmit = async listing => {
+    const result = await listingsApi.addListings({...listing, location}, 
+      progress => console.log(progress)
+      );
+    if (!result.ok) return alert('could not upload data');
+    alert('Success'); 
+  }
+
   return (
     <Screen style={styles.container}>
       <AppForm
@@ -91,7 +100,7 @@ const ListingEditScreen = () => {
           description: '',
           images: [],
         }}
-        onSubmit={values => console.log(location)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <FormImagePicker name={'images'} />
