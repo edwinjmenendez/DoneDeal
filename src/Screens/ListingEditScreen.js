@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import * as Yup from 'yup';
 
@@ -13,6 +13,7 @@ import FormImagePicker from '../Components/forms/FormImagePicker';
 import listingsApi from '../api/listings';
 import Screen from '../Components/Screen';
 import useLocation from '../hooks/useLocation';
+import UploadScreen from './UploadScreen';
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(2).label('Title'),
@@ -80,18 +81,27 @@ const categories = [
 ]
 
 const ListingEditScreen = () => {
+  // used for displaying progress modal screen
+  const [uploadScreenVisible, setUploadScreenVisible] = useState(false);
+  // tracks progress percentage of how long it takes to load data
+  const [progress, setProgress] = useState(0);
+  
   const location = useLocation();
 
   const handleSubmit = async listing => {
+    setUploadScreenVisible(true);
     const result = await listingsApi.addListings({...listing, location}, 
-      progress => console.log(progress)
+      progress => setProgress(progress)
       );
+    setUploadScreenVisible(false);
+    
     if (!result.ok) return alert('could not upload data');
     alert('Success'); 
   }
 
   return (
     <Screen style={styles.container}>
+      <UploadScreen visible={uploadScreenVisible} progress={progress} />
       <AppForm
         initialValues={{
           title: '',
