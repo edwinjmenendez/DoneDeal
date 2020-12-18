@@ -99,7 +99,7 @@ const ListingEditScreen = () => {
     setUploadScreenVisible(false);
     
     if (!result.ok) return alert('could not upload data');
-    alert('Success'); 
+    // alert('Success'); 
   }
 
   return (
