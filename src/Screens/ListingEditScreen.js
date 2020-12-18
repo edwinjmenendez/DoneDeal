@@ -89,6 +89,9 @@ const ListingEditScreen = () => {
   const location = useLocation();
 
   const handleSubmit = async listing => {
+    // resets progress each time 'post' button is pressed
+    // if not reset, progress will be initially at 100%
+    setProgress(0);
     setUploadScreenVisible(true);
     const result = await listingsApi.addListings({...listing, location}, 
       progress => setProgress(progress)
