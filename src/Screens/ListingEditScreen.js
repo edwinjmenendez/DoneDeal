@@ -88,7 +88,7 @@ const ListingEditScreen = () => {
   
   const location = useLocation();
 
-  const handleSubmit = async listing => {
+  const handleSubmit = async (listing, { resetForm }) => {
     // resets progress each time 'post' button is pressed
     // if not reset, progress will be initially at 100%
     setProgress(0);
@@ -101,6 +101,7 @@ const ListingEditScreen = () => {
       setUploadScreenVisible(false);
       alert('could not upload data');
     }
+    resetForm();
   }
 
   return (
